@@ -40,7 +40,7 @@ const PageBottomCard: React.FC = () => {
 				FIND YOUR FORM
 			</h2>
 			<p className="text-center">
-				You can support the project by signing up for our newsletter or following us @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
+				You can support the project by following us @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
 			</p>
 		</div>
 	)
