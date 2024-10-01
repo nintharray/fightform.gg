@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
-import Placeholder from './Placeholder';
+import FrontPage from './FrontPage';
 
 function App() {
   return (
-    <div className="App">
-			< Placeholder />
-    </div>
+			<div>
+				< FrontPage />
+    	</div>
   );
 }
 

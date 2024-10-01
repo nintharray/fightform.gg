@@ -3,7 +3,7 @@ import './App.css';
 
 const Placeholder: React.FC = () => {
   return (
-		<img src="images/fightform-text-transparent.png" alt="FIGHTFORM logo" className="Placeholder"/>
+		<img src="images/fightform-text-transparent.png" alt="FIGHTFORM logo" className="scale-10"/>
   );
 }
 

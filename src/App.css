@@ -16,3 +16,7 @@
 	0%, 100% { opacity: 0; }
 	50% {opacity: 1; }
 }
+
+.icon-dark {
+  @apply text-zinc-500 font-bold py-2 px-4 rounded
+}
