@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import ControllerButtonView from "./ControllerButtonView";
 import ConfigPanel from "./ConfigPanel";
@@ -58,6 +58,9 @@ const ConfiguratorPage: React.FC = () => {
 		};
 	};
 
+  useEffect(() => {
+    document.title = 'Configure FIGHTFORM';
+  }, []);
   return (
     <div className="h-screen flex justify-center items-center ">
       <ControllerButtonView config={config} setConfig={setConfig} mapUpdateTrigger={mapUpdateTrigger} />
