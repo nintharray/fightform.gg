@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const EmailSignup: React.FC = () => {
+interface EmailSignupProps {
+	signupId: string;
+}
+
+const EmailSignup: React.FC<EmailSignupProps> = ({ signupId }) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
@@ -27,30 +31,16 @@ const EmailSignup: React.FC = () => {
 
   const sendToMailingList = async (email: string) => {
 	
-		const url = "https://https://api.sendgrid.com/v3/marketing/contacts"
-		const sendGridApiKey = process.env.REACT_APP_SENDGRID_API;
-
-		const data = {
-			list_ids: [
-				"cb5054b6-03e0-4f42-a254-5ac31ce0c816",
-			],
-		  contacts: [
-		    {
-		      email: {email},
-		    },
-		  ],
-		};
+		const url = `https://fightform-gg-backend.onrender.com/subscribe?email=${email}`
 
 		const requestOptions: RequestInit = {
-		  method: 'PUT',
+		  method: 'GET',
 		  headers: {
 		    'Content-Type': 'application/json',
-		    Authorization: `Bearer ${sendGridApiKey}`,
 		  },
-		  body: JSON.stringify(data),
 		};
 		try {
-	    const response = await fetch(url, requestOptions);
+	    await fetch(url, requestOptions);
 	
     	setSuccess(true);
 	  } catch (error) {
@@ -67,7 +57,7 @@ const EmailSignup: React.FC = () => {
         </label>
         <input
           type="email"
-          id="email"
+          id={signupId}
           className="p-3 bg-black border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
           placeholder="Enter your email"
           value={email}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EmailSignup from './EmailSignup';
 
 const LogoIcon: React.FC = () => {
 	return (
@@ -41,6 +42,9 @@ const PageBottomCard: React.FC = () => {
 			</h2>
 			<p className="text-center">
 				You can support the project by following us @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
+			</p>
+			<p className="text-center">
+				We also have a <a href="https://discord.gg/GPW5ktHV">Discord</a>.
 			</p>
 		</div>
 	)
@@ -118,6 +122,7 @@ const FrontPage: React.FC = () => {
 			</div>
 			<div className="flex-grow">
 				< SloganCard />
+				< EmailSignup signupId={"top"} />
 			</div>
 			< DetailCard
 				title="All Game, No Pain"
@@ -128,24 +133,18 @@ const FrontPage: React.FC = () => {
 			< DetailCard
 				title="Switch it Up"
 				text="No gummy analog sticks. No mushy membranes. Only the crisp sound of slim, tactile keyboard switches - rated for millions of presses."
-				img="fightform-left.png"
+				img="fightform-right-thumb-buttons.png"
 				imgRight={false}
 			/>
 			< DetailCard
 				title="Control You Can Trust"
 				text="FIGHTFORM builds on trusted open-source firmware, configurable right in your browser with a USB connection."
-				img="fightform-right-thumb-buttons.png"
+				img="fightform-hub-io.png"
 				imgRight={true}
 			/>
-			< DetailCard
-				title="Did I Mention the Tripod?"
-				text="You can put it on a tripod. Tripod sold separately. But worth contemplating."
-				img="fightform-hub-io.png"
-				imgRight={false}
-			/>
-
 			<div className="flex-grow pb-12">
 				< PageBottomCard />
+				< EmailSignup signupId={"bottom"}/>
 			</div>
 			< Footer />
 		</div>
