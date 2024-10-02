@@ -56,10 +56,7 @@ const PageBottomCard: React.FC = () => {
 				FIND YOUR FORM
 			</h2>
 			<p className="text-center">
-				You can support the project by following us @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
-			</p>
-			<p className="text-center">
-				We also have a <a href="https://discord.gg/GPW5ktHV">Discord</a>.
+				You can support the project by following us @fightformgg on <a href="https://twitter.com/fightformgg" target="_blank" rel="noopener noreferrer">Twitter</a> or <a href="https://instagram.com/fightformgg" target="_blank" rel="noopener noreferrer">Insta</a>.
 			</p>
 		</div>
 	)
