@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import EmailSignup from './EmailSignup';
 import { IoLogoGameControllerB } from "react-icons/io";
 import { IoMdSettings } from "react-icons/io";
@@ -104,30 +104,6 @@ const Footer: React.FC = () => {
 }
 
 const FrontPage: React.FC = () => {
-	const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-
-  useEffect(() => {
-  	const handleScroll = () => {
-  	  const currentScrollY = window.scrollY;
-
-  	  // Show the header when scrolling up, hide it when scrolling down
-  	  if (currentScrollY < lastScrollY) {
-  	    setIsVisible(true); // scrolling up
-  	  } else {
-  	    setIsVisible(false); // scrolling down
-  	  }
-
-  	  setLastScrollY(currentScrollY);
-  	};
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
 
 	return (
 		<div className="flex flex-col min-h-screen h-auto">
