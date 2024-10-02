@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import ControllerButtonView from "./ControllerButtonView";
 import ConfigPanel from "./ConfigPanel";
@@ -49,6 +49,7 @@ const defaultConfig = Config.fromJson({
 const ConfiguratorPage: React.FC = () => {
   const [config, setConfig] = useState<Config>(defaultConfig);
 	const [mapUpdateTrigger, setMapUpdateTrigger] = useState<string>('');
+	const alertShown = useRef(false);
 
 	const forceMapReset = (status: boolean) => {
 		if (status) {
@@ -60,7 +61,11 @@ const ConfiguratorPage: React.FC = () => {
 
   useEffect(() => {
     document.title = 'Configure FIGHTFORM';
-  }, []);
+		if (navigator.serial === undefined && !alertShown.current) {
+			alert("Unfortunately, your browser doesn't support USB connectivity. Switch to a Chrome-based browser to flash FIGHTFORM over USB. You can still edit and save configs as files though.");
+			alertShown.current = true;
+		};
+  }, [alertShown]);
   return (
     <div className="h-screen flex justify-center items-center ">
       <ControllerButtonView config={config} setConfig={setConfig} mapUpdateTrigger={mapUpdateTrigger} />
