@@ -22,7 +22,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "Right":
             return (
               <img
-                src="https://www.ssbwiki.com/images/1/17/ButtonIcon-GCN-Control_Stick-R.svg"
+                src="images/Control_Stick-R.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -31,7 +31,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "Left":
             return (
               <img
-                src="https://www.ssbwiki.com/images/8/81/ButtonIcon-GCN-Control_Stick-L.svg"
+                src="images/Control_Stick-L.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -40,7 +40,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "Up":
             return (
               <img
-                src="https://www.ssbwiki.com/images/3/39/ButtonIcon-GCN-Control_Stick-U.svg"
+                src="images/Control_Stick-U.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -49,7 +49,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "Down":
             return (
               <img
-                src="https://www.ssbwiki.com/images/e/ed/ButtonIcon-GCN-Control_Stick-D.svg"
+                src="images/Control_Stick-D.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -58,7 +58,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "C-Right":
             return (
               <img
-                src="https://www.ssbwiki.com/images/2/27/ButtonIcon-GCN-C-Stick-R.svg"
+                src="images/C-Stick-R.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -67,7 +67,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "C-Left":
             return (
               <img
-                src="https://www.ssbwiki.com/images/f/f0/ButtonIcon-GCN-C-Stick-L.svg"
+                src="images/C-Stick-L.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -76,7 +76,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "C-Up":
             return (
               <img
-                src="https://www.ssbwiki.com/images/b/bb/ButtonIcon-GCN-C-Stick-U.svg"
+                src="images/C-Stick-U.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
@@ -85,7 +85,7 @@ const Key: React.FC<KeyProps> = ({ id, keyName, onClick, isActive }) => {
           case "C-Down":
             return (
               <img
-                src="https://www.ssbwiki.com/images/f/fb/ButtonIcon-GCN-C-Stick-D.svg"
+                src="images/C-Stick-D.svg"
                 alt={keyName}
                 draggable={false}
                 className="select-none"
