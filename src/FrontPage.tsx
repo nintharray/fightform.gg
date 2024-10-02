@@ -25,12 +25,14 @@ const StickyHeader: React.FC = () => {
 
 const ConfiguratorButton: React.FC = () => {
 	return (
-		<div className="p-4">
-			<div className="p-1 rounded-full bg-white text-black text-2xl flex flex-nowrap transition-transform duration-300 transform hover:scale-110">
-				<IoLogoGameControllerB />
-				<IoMdSettings />
+    <a href="/configure" target="_blank" rel="noopener noreferrer">
+			<div className="p-4">
+				<div className="p-1 rounded-full bg-white text-black text-2xl flex flex-nowrap transition-transform duration-300 transform hover:scale-110">
+					<IoLogoGameControllerB />
+					<IoMdSettings />
+				</div>
 			</div>
-		</div>
+		</a>
 	)
 }
 
