@@ -1,11 +1,14 @@
 import React from 'react';
 import FrontPage from './FrontPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-			<div>
-				< FrontPage />
-    	</div>
+     <Router>
+      <Routes>
+        <Route path="/" element={<FrontPage />} />
+      </Routes>
+    </Router>
   );
 }
 

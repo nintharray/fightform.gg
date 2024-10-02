@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import EmailSignup from './EmailSignup';
+import { IoLogoGameControllerB } from "react-icons/io";
+import { IoMdSettings } from "react-icons/io";
+
 
 const LogoIcon: React.FC = () => {
 	return (
@@ -9,14 +12,24 @@ const LogoIcon: React.FC = () => {
 	)
 }
 
-interface MenuBarProps {
-	isVisible: boolean;
+const StickyHeader: React.FC = () => {
+	return (
+		<div className="flex flex-row sticky bg-black items-center justify-between w-full top-0 text-lg h-16 border-b-2 border-zinc-300">
+		<div className="absolute left-0 right-0 flex items-center justify-center">
+			< LogoIcon /> 
+		</div>
+		< ConfiguratorButton />
+		</div>
+	)
 }
 
-const MenuBar: React.FC<MenuBarProps> = ({ isVisible }) => {
+const ConfiguratorButton: React.FC = () => {
 	return (
-		<div className={`flex flex-row sticky bg-black items-center justify-center w-full top-0 text-lg h-16 border-b-2 border-zinc-300 transition-transform duration-100 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-		< LogoIcon />
+		<div className="p-4">
+			<div className="p-1 rounded-full bg-white text-black text-2xl flex flex-nowrap transition-transform duration-300 transform hover:scale-110">
+				<IoLogoGameControllerB />
+				<IoMdSettings />
+			</div>
 		</div>
 	)
 }
@@ -116,7 +129,7 @@ const FrontPage: React.FC = () => {
 
 	return (
 		<div className="flex flex-col min-h-screen h-auto">
-			< MenuBar isVisible={isVisible} />
+			< StickyHeader />
 			<div className="w-full flex items-center justify-center">
 				<img src="images/fightform-front.png" alt="FIGHTFORM front view" className="w-max bg-transparent"/>
 			</div>
