@@ -112,14 +112,14 @@ const WebUSB: React.FC<WebUSBProps> = ({ config, setConfig, onImport }) => {
         console.error("serial connect fail: ", err);
       }
     }
-  }, [device, setConfig]);
+  }, [device, setConfig, onImport]);
 
   const disconnectSerialDevice = useCallback(async () => {
     device?.serialPort?.forget();
     setDevice(undefined);
     setDeviceInfo(undefined);
 		onImport(false);
-  }, [device]);
+  }, [device, onImport]);
 
   const importSerialDeviceConfig = async (device: HayBoxDevice) => {
     if (device === undefined) {

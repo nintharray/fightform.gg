@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useMemo } from "react";
+import React, { useCallback, useState, useEffect, useMemo, useRef } from "react";
 import { Config, GameModeConfig, Button, ButtonRemap } from "haybox-webserial";
 
 interface KeyProps {
@@ -409,10 +409,16 @@ const ControllerButtonView: React.FC<ControllerButtonViewProps> = ({
     setMap(defaultMap);
     resetBindingsInGameMode(0);
   }, [defaultMap, resetBindingsInGameMode]);
+	const resetMapDefaultRef = useRef(resetMapDefault);
+
+  useEffect(() => {
+      resetMapDefaultRef.current = resetMapDefault;
+  }, [resetMapDefault]);
 
 	useEffect(() => {
 		if (mapUpdateTrigger === 'controller connected') {
-			resetMapDefault();
+      const currentResetMapDefault = resetMapDefaultRef.current;
+			currentResetMapDefault();
 		}
 	}, [mapUpdateTrigger]);
 
