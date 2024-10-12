@@ -352,6 +352,8 @@ const ControllerButtonView: React.FC<ControllerButtonViewProps> = ({
       const updatedConfig = new Config({
         gameModeConfigs: gameModeConfigs,
         communicationBackendConfigs: config.communicationBackendConfigs,
+				defaultBackendConfig: 1,
+				defaultUsbBackendConfig: 1,
       });
 
       setConfig(updatedConfig);
