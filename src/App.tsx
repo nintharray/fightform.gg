@@ -1,5 +1,4 @@
 import React from 'react';
-import ConfiguratorPage from './ConfiguratorPage';
 import FrontPage from './FrontPage';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 

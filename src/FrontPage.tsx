@@ -1,7 +1,4 @@
 import React from 'react';
-import EmailSignup from './EmailSignup';
-import { IoLogoGameControllerB } from "react-icons/io";
-import { IoMdSettings } from "react-icons/io";
 
 
 const LogoIcon: React.FC = () => {
@@ -62,44 +59,6 @@ function StoryCard() {
 				Fightform is a late-stage prototype and is not available yet.
 			</p>
 		</div>
-	)
-}
-
-interface DetailCardProps {
-	title: string;
-	text: string;
-	img: string;
-	imgRight: boolean;
-}
-
-const DetailCard: React.FC<DetailCardProps> = ({ title, text, img, imgRight }) => {
-	return (
-		<div className="w-full flex flex-col lg:flex-row justify-evenly items-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-			{ !imgRight ? (
-				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-full max-w-md lg:w-1/2 bg-transparent mb-6 lg:mb-0"/>
-			) : ( <></> )}
-			<div className="flex flex-col max-w-lg lg:max-w-md items-center justify-center p-4">
-				<h2 className="text-center font-bold italic pb-2">
-					{title}
-				</h2>
-				<p className="text-center leading-relaxed">
-					{text}
-				</p>
-			</div>
-			{ imgRight ? (
-				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-full max-w-md lg:w-1/2 bg-transparent mt-6 lg:mt-0"/>
-			) : ( <></> )}
-		</div>
-	)
-}
-
-const Footer: React.FC = () => {
-	return (
-		<footer className="flex flex-row items-center justify-center border-t-2 border-zinc-300 h-24 px-4">
-		<p className="xl:text-base lg:text-base text-center max-w-2xl">
-			(c) FIGHTFORM {new Date().getFullYear()}. Product images are not final.
-		</p>	
-		</footer>
 	)
 }
 
