@@ -7,7 +7,7 @@ import { IoMdSettings } from "react-icons/io";
 const LogoIcon: React.FC = () => {
 	return (
 		<div className="bg-transparent">
-			<img src="images/fightform-text-transparent.png" alt="FIGHTFORM logo" className="h-6 bg-transparent"/>
+			<img src="images/fightform-logo-transparent-low-quality.png" alt="FIGHTFORM logo" className="h-10 bg-transparent"/>
 		</div>
 	)
 }
@@ -18,32 +18,18 @@ const StickyHeader: React.FC = () => {
 		<div className="absolute left-0 right-0 flex items-center justify-center">
 			< LogoIcon /> 
 		</div>
-		< ConfiguratorButton />
 		</div>
-	)
-}
-
-const ConfiguratorButton: React.FC = () => {
-	return (
-    <a href="/configure" target="_blank" rel="noopener noreferrer">
-			<div className="p-4">
-				<div className="p-1 rounded-full bg-white text-black text-2xl flex flex-nowrap transition-transform duration-300 transform hover:scale-110">
-					<IoLogoGameControllerB />
-					<IoMdSettings />
-				</div>
-			</div>
-		</a>
 	)
 }
 
 const SloganCard: React.FC = () => {
 	return (
-		<div className="flex flex-col items-center ">
-			<h1 className="pb-2">
+		<div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+			<h1 className="pb-2 whitespace-nowrap">
 				AT YOUR FINGERTIPS
 			</h1>
-			<p className="text-center">
-				FIGHTFORM. The controller designed to meet you at your level.
+			<p className="text-center max-w-2xl">
+				Fightform. The controller designed to meet you at your level.
 			</p>
 		</div>
 	)
@@ -51,12 +37,29 @@ const SloganCard: React.FC = () => {
 
 const PageBottomCard: React.FC = () => {
 	return (
-		<div className="flex flex-col items-center pt-6 px-2">
-			<h2 className="pb-2">
+		<div className="flex flex-col items-center pt-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+			{/* <h2 className="pb-2">
 				FIND YOUR FORM
+			</h2> */}
+			<p className="text-center max-w-2xl">
+				You can support the project by following @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
+			</p>
+		</div>
+	)
+}
+
+
+function StoryCard() {
+	return (
+		<div className="flex flex-col items-center pt-6 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+			<h2 className="pb-2">
+				WHAT IS FIGHTFORM?
 			</h2>
-			<p className="text-center">
-				You can support the project by following us @fightformgg on <a href="https://twitter.com/fightformgg">Twitter</a> or <a href="https://instagram.com/fightformgg">Insta</a>.
+			<p className="text-left max-w-3xl leading-relaxed indent-8">
+				Fightform is the culmination of 3 years of solo effort to develop the most optimal FGC controller for the human body.
+				It uses science-backed ergonomics and a weightless design via a tripod to deliver unparalleled gaming comfort.
+				The controller is not designed to be held - you simply adjust the tripod to your lap height if you're sitting, or play standing by adjusting the base angle of the controller downward and raising it to your hand height.
+				Fightform is a late-stage prototype and is not available yet.
 			</p>
 		</div>
 	)
@@ -71,20 +74,20 @@ interface DetailCardProps {
 
 const DetailCard: React.FC<DetailCardProps> = ({ title, text, img, imgRight }) => {
 	return (
-		<div className="w-full flex justify-evenly">
+		<div className="w-full flex flex-col lg:flex-row justify-evenly items-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
 			{ !imgRight ? (
-				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-1/2 bg-transparent"/>
+				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-full max-w-md lg:w-1/2 bg-transparent mb-6 lg:mb-0"/>
 			) : ( <></> )}
-			<div className="flex flex-col max-w-[50vw] items-center justify-center p-4">
+			<div className="flex flex-col max-w-lg lg:max-w-md items-center justify-center p-4">
 				<h2 className="text-center font-bold italic pb-2">
 					{title}
 				</h2>
-				<p className="text-center">
+				<p className="text-center leading-relaxed">
 					{text}
 				</p>
 			</div>
 			{ imgRight ? (
-				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-1/2 bg-transparent"/>
+				<img src={`images/${img}`} alt="FIGHTFORM render" className="w-full max-w-md lg:w-1/2 bg-transparent mt-6 lg:mt-0"/>
 			) : ( <></> )}
 		</div>
 	)
@@ -92,9 +95,9 @@ const DetailCard: React.FC<DetailCardProps> = ({ title, text, img, imgRight }) =
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="flex flex-row items-center justify-center border-t-2 border-zinc-300 h-24">
-		<p className="xl:text-base lg:text-base">
-			(c) FIGHTFORM 2024. Product images are not final.
+		<footer className="flex flex-row items-center justify-center border-t-2 border-zinc-300 h-24 px-4">
+		<p className="xl:text-base lg:text-base text-center max-w-2xl">
+			(c) FIGHTFORM {new Date().getFullYear()}. Product images are not final.
 		</p>	
 		</footer>
 	)
@@ -105,14 +108,15 @@ const FrontPage: React.FC = () => {
 	return (
 		<div className="flex flex-col min-h-screen h-auto">
 			< StickyHeader />
-			<div className="w-full flex items-center justify-center">
-				<img src="images/fightform-front.png" alt="FIGHTFORM front view" className="w-max bg-transparent"/>
+			<div className="w-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+				<img src="images/fightform-v2-front-line-art-gradient-no-logo.png" alt="FIGHTFORM front view" className="w-full max-w-4xl bg-transparent"/>
 			</div>
 			<div className="flex-grow">
 				< SloganCard />
-				< EmailSignup signupId={"top"} />
+				{/* < EmailSignup signupId={"top"} /> */}
 			</div>
-			< DetailCard
+			<StoryCard />
+			{/* < DetailCard
 				title="All Game, No Pain"
 				text="FIGHTFORM uses a neutral grip design which minimizes forearm and wrist strain. Play without compromise."
 				img="fightform-right.png"
@@ -129,12 +133,12 @@ const FrontPage: React.FC = () => {
 				text="FIGHTFORM builds on trusted open-source firmware, configurable right in your browser with a USB connection."
 				img="fightform-hub-io.png"
 				imgRight={true}
-			/>
+			/> */}
 			<div className="flex-grow pb-12">
 				< PageBottomCard />
-				< EmailSignup signupId={"bottom"}/>
+				{/* < EmailSignup signupId={"bottom"}/> */}
 			</div>
-			< Footer />
+			{/* < Footer /> */}
 		</div>
 	)
 }

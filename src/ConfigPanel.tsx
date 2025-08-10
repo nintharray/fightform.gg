@@ -90,7 +90,7 @@ const ConfigPanel: React.FC<SettingsProps> = ({ config, setConfig, onImport }) =
     updateSocdTypeInGameMode(0, newSocdType); // TODO implement multi profile
   };
 
-  const debug = false;
+  const debug = true;
 
   return (
     <div className="w-1/4 min-w-[330px] h-full ml-auto bg-zinc-900 rounded-tl-lg rounded-bl-lg">
